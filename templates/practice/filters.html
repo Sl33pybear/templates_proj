@@ -6,4 +6,8 @@
 
   <h3>Link</h3>
 <a href="{{ url }}">{{ company }}</a>
+
+<h3>First Filters</h3>
+{{ company|upper }}:
+{{ url|urlize }}
 {% endblock %}
