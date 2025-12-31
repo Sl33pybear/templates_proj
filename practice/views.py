@@ -64,6 +64,10 @@ context['classes'] = {
 
 context['blurb'] = '<p>You are <em>pretty</em> smart!</p>'
 
+context['user_blurb'] = """Shucks! What a cruddy day I\'ve had.
+I spent the whole darn day with my dirtiest
+friend darning his STINKY socks."""
+
 
 class HomePageView(TemplateView):
     template_name = 'home.html'
