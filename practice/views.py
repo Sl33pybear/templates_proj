@@ -82,3 +82,5 @@ class TagView(TemplateView):
         ]
     
         return context
+    
+    context['fruits'] = ['Apples', 'Bananas', 'Pears', 'Grapes', 'Oranges']
