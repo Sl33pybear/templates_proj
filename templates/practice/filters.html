@@ -1,4 +1,5 @@
 {% extends "_base.html" %}
+{% load common_filters %}
 
 {% block title %}Filters{% endblock %}
 {% block main %}
@@ -38,7 +39,9 @@
   </ol>
 
   <h3>Link</h3>
-<a href="{{ url }}">{{ company }}</a>
+  <a href="{{ url }}">{{ company }}</a>
+
+  <p>{{ company|repeat:3 }}</p>
 
 <h3>First Filters</h3>
 {{ company|upper }}:
