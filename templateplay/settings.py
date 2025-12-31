@@ -41,6 +41,8 @@ INSTALLED_APPS = [
 
     # Local apps
     'practice.apps.PracticeConfig',
+    'common.apps.CommonConfig',
+    'practice.apps.PracticeConfig',
 ]
 
 MIDDLEWARE = [
