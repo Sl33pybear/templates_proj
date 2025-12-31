@@ -27,8 +27,6 @@
   {% endfor %}
   </ol>
 
-  {{ blurb|truncatewords_html:3|safe }}
-
   <ol>
   {% for item, remaining in inventory.items %}
     <li class="{{ remaining|yesno:'instock,outofstock' }}">
@@ -37,6 +35,10 @@
     </li>
   {% endfor %}
   </ol>
+
+  {{ blurb|truncatewords_html:3|safe }}
+
+  <p>{{ company|repeat:3 }}</p>
 
   <h3>Link</h3>
   <a href="{{ url }}">{{ company }}</a>
