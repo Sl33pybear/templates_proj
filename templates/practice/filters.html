@@ -3,6 +3,39 @@
 {% block title %}Filters{% endblock %}
 {% block main %}
   <h2>Filters</h2>
+  {{ moon_landing|date:"DATETIME_FORMAT" }}
+
+  {{ moon_landing|timesince }}<br>
+    {{ launch_date|timesince:moon_landing }}
+
+  {{ century22|timeuntil }}<br>
+    {{ century22|timeuntil:moon_landing }}
+
+  <ol>
+  {% for item, remaining in inventory.items %}
+    <li>{{ item }}: {{ remaining|default:"out of stock" }}</li>
+  {% endfor %}
+  </ol>
+
+  <ol>
+  {% for category, titles in classes.items %}
+    <li>
+      {{ category }}: {{ titles|length }}
+      class{{ titles|pluralize:"es" }}
+    </li>
+  {% endfor %}
+  </ol>
+
+  {{ blurb|truncatewords_html:3|safe }}
+
+  <ol>
+  {% for item, remaining in inventory.items %}
+    <li class="{{ remaining|yesno:'instock,outofstock' }}">
+      {{ item }}: {{ remaining }} remaining
+      {{ remaining|yesno:',(time to place an order)' }}
+    </li>
+  {% endfor %}
+  </ol>
 
   <h3>Link</h3>
 <a href="{{ url }}">{{ company }}</a>
