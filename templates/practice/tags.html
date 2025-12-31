@@ -8,4 +8,11 @@
     <li>{{ beatle.firstname }} {{ beatle.lastname }}</li>
   {% endfor %}
 </ul>
+
+<ol>
+  {% for fruit in fruits %}
+    <li class="{% cycle 'odd' 'even' %}">{{ fruit }}</li>
+  {% endfor %}
+</ol>
+
 {% endblock %}
