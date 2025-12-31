@@ -62,7 +62,7 @@ class FilterView(TemplateView):
         }
 
         context['blurb'] = '<p>You are <em>pretty</em> smart!</p>'
-return context
+        return context
     
 
 
