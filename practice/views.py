@@ -9,6 +9,60 @@ class FilterView(TemplateView):
         context['url'] = 'https://www.webucator.com'
 
         return context
+    
+import datetime
+
+from django.views.generic import TemplateView
+
+class FilterView(TemplateView):
+    template_name = 'practice/filters.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['company'] = 'Webucator'
+        context['url'] = 'https://www.webucator.com'
+        context['moon_landing'] = datetime.datetime(
+            year=1969, month=7, day=21,
+            hour=2, minute=56, second=15,
+            tzinfo=datetime.timezone.utc
+        )
+
+        return context
+    
+context['launch_date'] = datetime.datetime(
+    year=1969, month=7, day=16, hour=13, minute=32, second=0,
+    tzinfo=datetime.timezone.utc
+)
+
+context['century22'] = datetime.datetime(
+    year=2100, month=1, day=1, tzinfo=datetime.timezone.utc
+)
+
+context['inventory'] = {
+    'gloves': 0,
+    'hats': 51,
+    'scarves': 2,
+    'socks': 13
+}
+
+context['classes'] = {
+    'Python': [
+        'Introduction to Python', 'Advanced Python',
+        'Data Science', 'Django'
+    ],
+    'Databases': [
+        'Introduction to PostgreSQL', 'Introduction to MySQL',
+        'Introduction to SQL Server', 'Introduction to Oracle'
+    ],
+    'Web': [
+        'HTML', 'CSS', 'JavaScript'
+    ],
+    'XML': [
+        'Introduction to XML'
+    ]
+}
+
+context['blurb'] = '<p>You are <em>pretty</em> smart!</p>'
 
 
 class HomePageView(TemplateView):
